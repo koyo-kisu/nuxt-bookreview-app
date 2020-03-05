@@ -10,7 +10,7 @@ const createStore = () => {
           previewText: 'texttexttext'
         },
         {
-          id: '1',
+          id: '2',
           title: 'sample-title2',
           previewText: 'texttexttext'
         }

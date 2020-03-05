@@ -1,12 +1,12 @@
 <template>
-  <div class="post-preview">
+  <nuxt-link class="post-preview" :to="postLink">
     <article>
       <div class="post-content">
         <p>{{ title }}</p>
         <p>{{ previewText }}</p>
       </div>
     </article>
-  </div>
+  </nuxt-link>
 </template>
 
 <script>
@@ -24,6 +24,11 @@ export default {
     previewText: {
       type: String,
       required: true
+    }
+  },
+  computed: {
+    postLink() {
+      return  '/posts/' + this.id
     }
   }
 }
