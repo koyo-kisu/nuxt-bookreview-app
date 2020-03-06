@@ -3,6 +3,7 @@
     <article>
       <div class="post-content">
         <p>{{ title }}</p>
+        <p>{{ author }}</p>
         <p>{{ previewText }}</p>
       </div>
     </article>
@@ -21,6 +22,10 @@ export default {
       type: String,
       required: true
     },
+    author: {
+      type: String,
+      required: true
+    },
     previewText: {
       type: String,
       required: true
@@ -34,6 +39,27 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.post-preview {
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 2px #ccc;
+  background-color: white;
+  width: 60%;
+  margin-top: 20px;
+}
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.post-content {
+  padding: 10px;
+  text-align: center;
+}
+
+a:hover .post-content,
+a:active .post-content {
+  background-color: #ccc;
+}
 </style>

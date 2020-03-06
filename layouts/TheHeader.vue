@@ -3,7 +3,8 @@
     <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" :router="true">
       <el-menu-item>site name</el-menu-item>
       <el-menu-item index="1" :route="{ path: '/' }">home</el-menu-item>
-      <el-menu-item index="2" :route="{ path: '/post/' }">post</el-menu-item>
+      <el-menu-item index="2" :route="{ path: '/new_post' }">new</el-menu-item>
+      <el-menu-item index="3" :route="{ path: '/account' }">account</el-menu-item>
     </el-menu>
   </div>
 </template>
