@@ -7,7 +7,7 @@
 </template>
 
 <script>
-// import axios from 'axios';
+import axios from 'axios';
 import PostForm from "@/components/PostForm";
 
 export default {

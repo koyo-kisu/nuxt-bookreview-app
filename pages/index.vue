@@ -1,22 +1,33 @@
 <template>
   <div class="home">
-    <PostList :posts="loadedPosts"/>
+    <post-list :posts="loadedPosts"></post-list>
   </div>
 </template>
 
 <script>
 import PostList from '@/components/PostList';
+import { db } from '@/plugins/firebase';
 
 export default {
+  data () {
+    return {
+      loadedPosts: []
+    }
+  },
+
   components: {
     PostList,
   },
 
-  computed: {
-    loadedPosts() {
-      return this.$store.getters.loadedPosts
-    }
-  },
+  mounted () {
+    db.collection('posts').get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          this.loadedPosts.push(doc.data())
+          console.log(doc.id, " => ", doc.data())
+        })
+      })
+  }
 }
 </script>
 

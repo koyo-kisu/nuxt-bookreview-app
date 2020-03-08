@@ -1,18 +1,19 @@
 <template>
   <section class="post-list">
-    <PostPreview 
+    <post-preview 
       v-for="post in posts"
       :key="post.id"
       :id="post.id"
       :title="post.title"
       :author="post.author"
-      :previewText="post.previewText"
-      />
+      :text="post.text"
+      ></post-preview >
   </section>
 </template>
 
 <script>
 import PostPreview from '@/components/PostPreview';
+import { db } from '@/plugins/firebase';
 
 export default {
   name: 'PostList',
